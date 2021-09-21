@@ -8,20 +8,20 @@ title = "TODO sample application with Flask and MongoDB"
 heading = "TODO Reminder with Flask and MongoDB"    
     
 client = MongoClient("mongodb://127.0.0.1:27017") 
-db = client.mymongodb    
+db = client.bda_assignment    
 todos = db.todo 
     
 def redirect_url():    
     return request.args.get('next') or request.referrer or url_for('index')    
   
-@app.route("/list")    
+@app.route("/")    
 def lists ():    
     # Display the all Tasks    
     todos_l = todos.find()    
     a1="active"    
     return render_template('index.html',a1=a1,todos=todos_l,t=title,h=heading)    
   
-@app.route("/")    
+@app.route("/list")    
 @app.route("/uncompleted")    
 def tasks ():    
     # Display the Uncompleted Tasks    

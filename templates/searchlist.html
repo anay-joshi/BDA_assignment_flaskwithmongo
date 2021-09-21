@@ -26,7 +26,10 @@
       <tr class="datas">
         <td>
           <a href="./done?_id={{ todo['_id'] }}"
-            ><input type="text" alt="Submit ME"
+            ><input
+              type="image"
+              src="static/images/{{todo['done']}}.png"
+              alt="Submit ME"
           /></a>
         </td>
         <td class="name">{{ todo["name"] }}</td>
